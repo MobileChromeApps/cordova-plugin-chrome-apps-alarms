@@ -4,27 +4,21 @@
 
 package org.chromium;
 
-import org.apache.cordova.PluginResult;
 import org.apache.cordova.CordovaArgs;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.chromium.BackgroundActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import java.util.ArrayList;
-
 public class ChromeAlarms extends CordovaPlugin {
     private static final String LOG_TAG = "ChromeAlarms";
-    private static final String MAIN_ACTIVITY_LABEL = "ChromeAlarms.MainActivity";
 
     private static BackgroundEventHandler<ChromeAlarms> eventHandler;
 
@@ -86,7 +80,7 @@ public class ChromeAlarms extends CordovaPlugin {
         // Use different actions for different alarm names so that PendingIntent.getBroadcast returns different PendingIntents for
         // alarms with different names but replaces existing PendingIntents with a new one if one exists with the same name.
         broadcastIntent.setAction(cordova.getActivity().getPackageName() + ".ALARM." + name);
-        broadcastIntent.putExtra(MAIN_ACTIVITY_LABEL, cordova.getActivity().getIntent().getComponent());
+        getEventHandler().makeBackgroundEventIntent(broadcastIntent);
         return PendingIntent.getBroadcast(cordova.getActivity(), 0, broadcastIntent, flags);
     }
 
