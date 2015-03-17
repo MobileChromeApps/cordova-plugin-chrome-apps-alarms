@@ -24,7 +24,7 @@
   </js-module>
 
   <platform name="android">
-    <dependency id="org.chromium.backgroundapp" />
+    <dependency id="org.chromium.backgroundapp@1" />
 
     <source-file src="src/android/ChromeAlarms.java" target-dir="src/org/chromium" />
     <source-file src="src/android/ChromeAlarmsReceiver.java" target-dir="src/org/chromium" />
