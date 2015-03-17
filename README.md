@@ -12,6 +12,9 @@ The API reference is [here](http://developer.chrome.com/apps/alarms.html).
 
 # Release Notes
 
+## 1.3.2 (Mar 17, 2015)
+* Remove version constraint on backgroundapp dependency due to plugman bug CB-8696
+
 ## 1.3.1 (Mar 17, 2015)
 * Use component to handle background events (merged from main repo mobile-chrome-apps/android-service)
 
