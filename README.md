@@ -12,6 +12,9 @@ The API reference is [here](http://developer.chrome.com/apps/alarms.html).
 
 # Release Notes
 
+## 1.3.1 (Mar 17, 2015)
+* Use component to handle background events (merged from main repo mobile-chrome-apps/android-service)
+
 ## 1.3.0 (Jan 27, 2015)
 * Add callback parameters to `chrome.alarms.clear` and `clearAll` (fixes #489)
 
