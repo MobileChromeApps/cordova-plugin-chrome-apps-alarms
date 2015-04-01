@@ -8,7 +8,7 @@ var numAlarms = 0;
 
 function createAlarm(delaySeconds, repeatSeconds) {
   var alarmName = SINGLE_ALARM_NAME_PREFIX + numAlarms;
-  numAlarms++
+  numAlarms++;
 
   var expectedFireTime = Date.now() + (delaySeconds * 1000);
   var alarm = { when:expectedFireTime };
@@ -29,7 +29,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 });
 
 
-registerManualTests('chrome.alarms', function(rootEl, addButton) {
+exports.defineManualTests = function(rootEl, addButton) {
   addButton('One-time alarm', function() {
     createAlarm(5);
   });
@@ -42,4 +42,4 @@ registerManualTests('chrome.alarms', function(rootEl, addButton) {
       chrome.alarms.clear(REPEATING_ALARM_NAME);
   });
 
-});
+};
