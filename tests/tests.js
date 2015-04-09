@@ -46,6 +46,9 @@ exports.defineManualTests = function(rootEl, addButton) {
 
 exports.defineAutoTests = function() {
   'use strict';
+
+  require('cordova-plugin-chrome-apps-test-framework.jasmine_helpers').addJasmineHelpers();
+
   var sliceLowerLimit=300; // chrome production is 60000 ms, can get away with as low as 300ms for mobile (not spec)
   var alarmEarlyTolerance = sliceLowerLimit;
   var alarmLateTolerance = 5000;
