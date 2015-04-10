@@ -19,15 +19,18 @@ function createAlarm(delaySeconds, repeatSeconds) {
   chrome.alarms.create(alarmName, alarm);
 }
 
-console.log('Alarms test registered for alarms');
+// As this file is run at app startup, wait for deviceready before
+// using any plugin APIs
+document.addEventListener("deviceready", function() {
+  console.log('Alarms test registered for alarms');
 
-chrome.alarms.onAlarm.addListener(function(alarm) {
-  if (alarm.name === REPEATING_ALARM_NAME ||
-    alarm.name.indexOf(SINGLE_ALARM_NAME_PREFIX) > -1) {
-    console.log("Received alarm: " + alarm.name);
-  }
+  chrome.alarms.onAlarm.addListener(function(alarm) {
+    if (alarm.name === REPEATING_ALARM_NAME ||
+      alarm.name.indexOf(SINGLE_ALARM_NAME_PREFIX) > -1) {
+      console.log("Received alarm: " + alarm.name);
+    }
+  });
 });
-
 
 exports.defineManualTests = function(rootEl, addButton) {
   addButton('One-time alarm', function() {
