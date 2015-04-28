@@ -4,11 +4,11 @@
 
 var exports = module.exports;
 var exec = require('cordova/exec');
-var storage = require('org.chromium.storage.Storage');
-var helpers = require('org.chromium.common.helpers');
+var storage = require('cordova-plugin-chrome-apps-storage.Storage');
+var helpers = require('cordova-plugin-chrome-apps-common.helpers');
 var platform = require('cordova/platform');
 var channel = require('cordova/channel');
-var Event = require('org.chromium.common.events');
+var Event = require('cordova-plugin-chrome-apps-common.events');
 var useNativeAlarms = platform.id == 'android';
 var alarms = Object.create(null);
 var alarmsToFireOnStartUp = [];
