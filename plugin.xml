@@ -16,15 +16,15 @@
   <repo>https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms.git</repo>
   <issue>https://github.com/MobileChromeApps/cordova-plugin-chrome-apps-alarms/issues</issue>
 
-  <dependency id="cordova-plugin-chrome-apps-common" />
-  <dependency id="cordova-plugin-chrome-apps-storage" />
+  <dependency id="cordova-plugin-chrome-apps-common@1" />
+  <dependency id="cordova-plugin-chrome-apps-storage@1" />
 
   <js-module src="alarms.js" name="Alarms">
     <clobbers target="chrome.alarms" />
   </js-module>
 
   <platform name="android">
-    <dependency id="cordova-plugin-background-app" />
+    <dependency id="cordova-plugin-background-app@2" />
 
     <source-file src="src/android/ChromeAlarms.java" target-dir="src/org/chromium" />
     <source-file src="src/android/ChromeAlarmsReceiver.java" target-dir="src/org/chromium" />
