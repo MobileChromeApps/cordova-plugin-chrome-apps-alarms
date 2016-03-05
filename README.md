@@ -13,7 +13,7 @@ The API reference is [here](http://developer.chrome.com/apps/alarms.html).
 # Release Notes
 
 ## 1.3.3 (April 30, 2015)
-- Renamed plugin to pubilsh to NPM
+- Renamed plugin to publish to NPM
 
 ## 1.3.2 (Mar 17, 2015)
 * Remove version constraint on backgroundapp dependency due to plugman bug CB-8696
